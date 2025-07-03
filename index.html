@@ -270,6 +270,22 @@
       preloader.style.display = 'none';
     }
   });
+
+  <script>
+  document.body.classList.add('dark-mode'); // Set dark mode by default
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    const toggleBtn = document.querySelector('.toggle-mode');
+    toggleBtn.innerHTML = isDark ? '🌞 Day Mode' : '🌙 Night Mode';
+  }
+  window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
+  });
 </script>
+
 </body>
 </html>
