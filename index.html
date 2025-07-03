@@ -3,19 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rahul Singh Bisht | Portfolio</title>
+  <title>Rahul Singh Bisht | Advanced Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --bg-light: #f0f8ff;
+      --bg-dark: #1a1a1a;
+      --text-light: #333;
+      --text-dark: #eee;
+      --primary: #007acc;
+      --accent: #005f99;
     }
     body {
       font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(to right, #f0f8ff, #ffffff);
-      color: #333;
-      line-height: 1.6;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .dark-mode header,
+    .dark-mode nav,
+    .dark-mode footer {
+      background-color: #111;
+      color: var(--text-dark);
     }
     header {
       background: url('https://source.unsplash.com/1600x600/?technology,workspace') center/cover no-repeat;
@@ -27,7 +41,6 @@
       text-align: center;
       color: white;
       padding: 20px;
-      animation: fadeIn 2s ease-in;
     }
     header h1 {
       font-size: 4rem;
@@ -49,26 +62,39 @@
       padding: 15px;
       z-index: 100;
     }
+    .dark-mode nav {
+      background: #222;
+    }
     nav a {
       text-decoration: none;
-      color: #007acc;
+      color: var(--primary);
       font-weight: 600;
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #004d73;
+      color: var(--accent);
+    }
+    .toggle-mode {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
     }
     section {
       padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
-      animation: slideUp 1s ease-out;
     }
     h2 {
       text-align: center;
       margin-bottom: 40px;
       font-size: 2.5rem;
-      color: #007acc;
+      color: var(--primary);
     }
     .projects, .skills-list {
       display: grid;
@@ -81,6 +107,10 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       padding: 20px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dark-mode .card {
+      background: #2a2a2a;
+      color: var(--text-dark);
     }
     .card:hover {
       transform: translateY(-10px);
@@ -96,7 +126,7 @@
     .btn {
       display: inline-block;
       padding: 12px 24px;
-      background: #007acc;
+      background: var(--primary);
       color: white;
       border: none;
       border-radius: 8px;
@@ -105,22 +135,14 @@
       transition: background 0.3s;
     }
     .btn:hover {
-      background: #005f99;
+      background: var(--accent);
     }
     footer {
-      background: #005f99;
+      background: var(--accent);
       color: white;
       text-align: center;
       padding: 30px 20px;
       margin-top: 60px;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    @keyframes slideUp {
-      from {transform: translateY(40px); opacity: 0;}
-      to {transform: translateY(0); opacity: 1;}
     }
   </style>
 </head>
@@ -136,9 +158,10 @@
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
+  <button class="toggle-mode" onclick="toggleDarkMode()">🌙 Toggle Mode</button>
 </nav>
 
-<section id="about">
+<section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <p style="text-align:center; max-width:800px; margin:auto">I'm a data-driven and marketing-aware professional with hands-on experience in Excel, SQL, Power BI, and digital marketing tools. I translate complex data into actionable insights and compelling stories. I'm actively seeking remote-first roles in business analytics and marketing strategy.</p>
   <div style="text-align:center">
@@ -146,20 +169,20 @@
   </div>
 </section>
 
-<section id="projects">
+<section id="projects" data-aos="fade-up">
   <h2>Featured Projects</h2>
   <div class="projects">
-    <div class="card">
+    <div class="card" data-aos="zoom-in">
       <img src="https://source.unsplash.com/600x400/?analytics" alt="Coffee Sales Dashboard">
       <h3>Coffee Sales Dashboard</h3>
       <p>Used Excel with pivot tables, charts, and formatting to identify key sales insights across time and regions.</p>
     </div>
-    <div class="card">
+    <div class="card" data-aos="zoom-in">
       <img src="https://source.unsplash.com/600x400/?accident,data" alt="Accident Risk Dashboard">
       <h3>Accident Risk Visualization</h3>
       <p>Created a Power BI dashboard to highlight accident-prone zones and patterns using geo-visualizations.</p>
     </div>
-    <div class="card">
+    <div class="card" data-aos="zoom-in">
       <img src="https://source.unsplash.com/600x400/?marketing,performance" alt="Campaign ROI Dashboard">
       <h3>Marketing Campaign ROI</h3>
       <p>Built a dynamic dashboard tracking ROI, CTR, CPC, and CPL across platforms using Power BI and DAX.</p>
@@ -167,10 +190,10 @@
   </div>
 </section>
 
-<section id="skills">
+<section id="skills" data-aos="fade-up">
   <h2>Skills & Certifications</h2>
   <div class="skills-list">
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Tools & Tech</h3>
       <ul>
         <li>Power BI, Excel, Tableau</li>
@@ -178,7 +201,7 @@
         <li>Google Ads, HubSpot, Canva</li>
       </ul>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Core Strengths</h3>
       <ul>
         <li>Business Analytics</li>
@@ -186,7 +209,7 @@
         <li>Data Visualization & ROI Analysis</li>
       </ul>
     </div>
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Certifications</h3>
       <ul>
         <li>Google Ads (Search & Display)</li>
@@ -198,7 +221,7 @@
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-aos="fade-up">
   <h2>Contact Me</h2>
   <p style="text-align:center">Reach out for collaborations, remote work, or consulting opportunities.</p>
   <div style="text-align:center; margin-top: 20px;">
@@ -212,5 +235,12 @@
   <p>&copy; 2025 Rahul Singh Bisht. All rights reserved.</p>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
 </body>
 </html>
