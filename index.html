@@ -1,38 +1,114 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Bisht's Portfolio</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #0044cc; color: #fff; padding: 20px; text-align: center; }
-        section { padding: 20px; }
-        .project { border: 1px solid #ccc; margin: 10px 0; padding: 10px; }
-        footer { text-align: center; padding: 10px; background: #f0f0f0; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rahul's Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #005f99;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #005f99;
+      color: white;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Rahul Bisht's Portfolio</h1>
-        <p>Excel & Power BI Specialist</p>
-    </header>
-    <section>
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Interactive Sales Dashboard</h3>
-            <p><strong>Tools Used:</strong> Power BI, DAX</p>
-            <p><strong>Outcome:</strong> Increased decision-making speed by 20%</p>
-        </div>
-        <div class="project">
-            <h3>Employee Productivity Tracker</h3>
-            <p><strong>Tools Used:</strong> Excel, COUNTIF</p>
-            <p><strong>Outcome:</strong> Improved productivity tracking efficiency</p>
-        </div>
-    </section>
-    <footer>
-        <p>Contact: [Your Email] | LinkedIn: [Your Profile]</p>
-    </footer>
+
+<header>
+  <h1>Hi, I'm Rahul</h1>
+  <p>Welcome to my professional portfolio</p>
+</header>
+
+<nav>
+  <a href="#projects">Projects</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Project One</h3>
+      <p>Description of project one.</p>
+    </div>
+    <div class="project">
+      <h3>Project Two</h3>
+      <p>Description of project two.</p>
+    </div>
+    <div class="project">
+      <h3>Project Three</h3>
+      <p>Description of project three.</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a passionate learner and aspiring business analyst with experience in Excel, dashboards, and creative design. I enjoy building useful and beautiful digital experiences.</p>
+  <a class="btn" href="Rahul_Resume.pdf" download>Download Resume</a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email me at: <strong>rahul@example.com</strong></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Rahul. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
