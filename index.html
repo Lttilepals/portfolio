@@ -7,6 +7,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    /* Preloader styles */
+    #preloader {
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #007acc;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
     :root {
       --bg-light: #f0f8ff;
       --bg-dark: #1a1a1a;
@@ -32,7 +58,7 @@
       color: var(--text-dark);
     }
     header {
-      background: url('https://source.unsplash.com/1600x600/?technology,workspace') center/cover no-repeat;
+      background: url('portfolio-cover.jpg') center/cover no-repeat;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -144,15 +170,19 @@
       padding: 30px 20px;
       margin-top: 60px;
     }
+    .contact-icons img {
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
-
+<div id="preloader"><div class="loader"></div></div>
 <header>
   <h1>Rahul Singh Bisht</h1>
   <p>Business Analyst | Data Visualizer | Marketing Strategist</p>
 </header>
-
 <nav>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
@@ -160,7 +190,6 @@
   <a href="#contact">Contact</a>
   <button class="toggle-mode" onclick="toggleDarkMode()">🌙 Toggle Mode</button>
 </nav>
-
 <section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <p style="text-align:center; max-width:800px; margin:auto">I'm a data-driven and marketing-aware professional with hands-on experience in Excel, SQL, Power BI, and digital marketing tools. I translate complex data into actionable insights and compelling stories. I'm actively seeking remote-first roles in business analytics and marketing strategy.</p>
@@ -168,28 +197,26 @@
     <a class="btn" href="Rahul_Resume.pdf" download>Download Resume</a>
   </div>
 </section>
-
 <section id="projects" data-aos="fade-up">
   <h2>Featured Projects</h2>
   <div class="projects">
     <div class="card" data-aos="zoom-in">
-      <img src="https://source.unsplash.com/600x400/?analytics" alt="Coffee Sales Dashboard">
+      <img src="dashboard1.jpg" alt="Coffee Sales Dashboard">
       <h3>Coffee Sales Dashboard</h3>
       <p>Used Excel with pivot tables, charts, and formatting to identify key sales insights across time and regions.</p>
     </div>
     <div class="card" data-aos="zoom-in">
-      <img src="https://source.unsplash.com/600x400/?accident,data" alt="Accident Risk Dashboard">
+      <img src="dashboard2.jpg" alt="Accident Risk Dashboard">
       <h3>Accident Risk Visualization</h3>
       <p>Created a Power BI dashboard to highlight accident-prone zones and patterns using geo-visualizations.</p>
     </div>
     <div class="card" data-aos="zoom-in">
-      <img src="https://source.unsplash.com/600x400/?marketing,performance" alt="Campaign ROI Dashboard">
+      <img src="dashboard3.jpg" alt="Campaign ROI Dashboard">
       <h3>Marketing Campaign ROI</h3>
       <p>Built a dynamic dashboard tracking ROI, CTR, CPC, and CPL across platforms using Power BI and DAX.</p>
     </div>
   </div>
 </section>
-
 <section id="skills" data-aos="fade-up">
   <h2>Skills & Certifications</h2>
   <div class="skills-list">
@@ -220,27 +247,29 @@
     </div>
   </div>
 </section>
-
 <section id="contact" data-aos="fade-up">
   <h2>Contact Me</h2>
-  <p style="text-align:center">Reach out for collaborations, remote work, or consulting opportunities.</p>
-  <div style="text-align:center; margin-top: 20px;">
-    <p><strong>Email:</strong> rahulbisht3210@gmail.com</p>
-    <p><strong>Phone:</strong> +91 90583 35254</p>
+  <div class="contact-icons" style="text-align:center; margin-top: 20px;">
+    <p><img src="email-icon.png" alt="Email"> <strong>rahulbisht3210@gmail.com</strong></p>
+    <p><img src="phone-icon.png" alt="Phone"> <strong>+91 90583 35254</strong></p>
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rahulbishtma" target="_blank">linkedin.com/in/rahulbishtma</a></p>
   </div>
 </section>
-
 <footer>
   <p>&copy; 2025 Rahul Singh Bisht. All rights reserved.</p>
 </footer>
-
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
   }
+  window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
+  });
 </script>
 </body>
 </html>
