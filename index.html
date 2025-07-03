@@ -258,27 +258,21 @@
 <footer>
   <p>&copy; 2025 Rahul Singh Bisht. All rights reserved.</p>
 </footer>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init();
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
-  window.addEventListener('load', function () {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-      preloader.style.display = 'none';
-    }
-  });
 
-  <script>
-  document.body.classList.add('dark-mode'); // Set dark mode by default
+  // Enable dark mode by default
+  document.body.classList.add('dark-mode');
+
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     const toggleBtn = document.querySelector('.toggle-mode');
     toggleBtn.innerHTML = isDark ? '🌞 Day Mode' : '🌙 Night Mode';
   }
+
   window.addEventListener('load', function () {
     const preloader = document.getElementById('preloader');
     if (preloader) {
@@ -286,6 +280,7 @@
     }
   });
 </script>
+
 
 </body>
 </html>
